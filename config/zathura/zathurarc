@@ -1,0 +1,40 @@
+include catppuccin-mocha
+
+map p print
+map i recolor
+map r reload
+map R rotate
+map - zoom out
+map = zoom in
+map 0 zoom reset
+unmap f
+map f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+
+# Open document in fit-width mode by default
+set adjust-open "width"  # "best-fit"
+
+# One page per row by default
+set pages-per-row 1
+
+# Stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# Zoom settings
+set zoom-min 10
+set guioptions ""
+
+# Enable copy to clipboard
+set selection-clipboard clipboard
+
+# Font
+set font "Rubik 13"
+
+# Recolor book content's color
+set recolor                     true
+set recolor-keephue             true      # keep original color
+
+# Open last opened document on startup
+set remember-page               true
