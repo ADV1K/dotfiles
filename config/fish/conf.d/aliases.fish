@@ -5,10 +5,10 @@ set BROWSER     google-chrome-stable
 set PAGER       bat
 
 # Aliases
-alias ls        "exa --icons" 
-alias ll        "exa --icons --long --header" 
-alias la        "exa --icons --long --header --all" 
-alias tree      "exa --icons --tree --level 2" 
+alias ls        "eza --icons" 
+alias ll        "eza --icons --long --header" 
+alias la        "eza --icons --long --header --all" 
+alias tree      "eza --icons --tree --level 2" 
 
 alias rm        trash
 alias rg        batgrep
