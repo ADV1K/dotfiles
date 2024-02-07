@@ -1,0 +1,1 @@
+/Users/advik/.asdf/completions/asdf.fish

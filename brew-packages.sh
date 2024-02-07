@@ -1,15 +1,19 @@
 brew install \
-    stow
-    fish
-    starship
-    zoxide
-    direnv
-    exa
-    bat
-    bat-extras
-    ripgrep
-    fd
-    fzf
-    neovim
-    tmux
-    trash
+    stow \
+    fish \
+    starship \
+    zoxide \
+    direnv \
+    eza \
+    bat \
+    bat-extras \
+    ripgrep \
+    fd \
+    fzf \
+    neovim \
+    tmux \
+    trash \
+    lf \
+    ncdu
+
+#tldr
