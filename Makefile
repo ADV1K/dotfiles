@@ -1,4 +1,4 @@
 install:
-	cp -rf config/* ~/.config/
+	stow -R -t ~/.config/ config -v
 
 .PHONY: install
