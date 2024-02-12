@@ -14,6 +14,7 @@ brew install \
     tmux \
     trash \
     lf \
-    ncdu
+    ncdu \
+    git-delta
 
-#tldr
+#tldeer
