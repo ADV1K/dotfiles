@@ -35,3 +35,13 @@ abbr eh         "$EDITOR ~/.config/hypr/hyprland.conf"
 abbr get	    "sudo pacman -S --needed"
 abbr remove	    "sudo pacman -Rcns"
 
+# Git
+abbr g            "git"
+abbr gs           "git status"
+abbr ga           "git add"
+abbr gaa          "git add --all"
+abbr gcm          "git commit -m"
+abbr gca          "git commit --amend"
+abbr gco          "git checkout"
+abbr gcb          "git checkout -b"
+abbr gcl          "git clone"
