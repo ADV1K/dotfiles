@@ -1,7 +1,7 @@
 # Variables
 set EDITOR      nvim
 set VISUAL      nvim
-set BROWSER     google-chrome-stable
+# set BROWSER     google-chrome-stable
 set PAGER       bat
 
 # Aliases
@@ -17,6 +17,7 @@ alias cat       bat
 alias man       "BAT_THEME='default' batman"
 alias curl      curlie
 alias grep      batgrep
+alias diff      delta
 alias grip      "grip --browser"
 alias ncdu      "ncdu --color dark -x"
 alias take      'mkdir -p $argv[1]; cd $argv[1];'
@@ -31,7 +32,10 @@ abbr s		    "source ~/.config/fish/config.fish"
 abbr ef		    "$EDITOR ~/.config/fish/config.fish"
 abbr ek		    "$EDITOR ~/.config/kitty/kitty.conf"
 abbr et		    "$EDITOR ~/.config/tmux/tmux.conf"
+abbr ey         "$EDITOR ~/.config/yabai/yabairc"
 abbr eh         "$EDITOR ~/.config/hypr/hyprland.conf"
+abbr ev         "$EDITOR ~/.config/nvim/lua/custom/init.lua"
+abbr tb         "nc termbin.com 9999"
 abbr get	    "sudo pacman -S --needed"
 abbr remove	    "sudo pacman -Rcns"
 

@@ -1,0 +1,122 @@
+#!/usr/bin/env python
+#
+# 0rk (v0.2.0) -- Get friendly help where you need it: from the terminal!
+#
+#
+# Art & Words from @b0rk at <http://jvns.ca/>
+#
+# Code by <http://rancidbacon.com/> (License: GPL 3.0)
+#
+#
+# See: <https://twitter.com/starakaj/status/992124188021460992>
+#
+#
+# This is a proof-of-concept.
+#
+#
+# You can follow & support @b0rk's work here:
+#
+#     * <http://jvns.ca/>
+#     * <https://twitter.com/b0rk>
+#     * <https://gumroad.com/b0rk>
+#
+#
+# Note: This tool is "fan code" (a la "fan art") and is not
+#       written nor endorsed by @b0rk.
+#
+
+import os
+import sys
+import urllib.request, urllib.error, urllib.parse
+import hashlib
+import subprocess
+
+# Note: There are SVG files available also.
+
+SUBJECTS = {
+    'pipes': {'img_url': 'https://drawings.jvns.ca/drawings/pipes.png', 'page_url': 'https://drawings.jvns.ca/pipes/'},
+    'man': {'img_url': 'https://drawings.jvns.ca/drawings/man.png',  'page_url': 'https://drawings.jvns.ca/man/'},
+    'proc': {'img_url': 'https://drawings.jvns.ca/drawings/proc.jpeg', 'page_url': 'https://drawings.jvns.ca/proc/'},
+    'signals': {'img_url': 'https://drawings.jvns.ca/drawings/signals.jpeg', 'page_url': 'https://drawings.jvns.ca/signals/'},
+    'permissions': {'img_url': 'https://drawings.jvns.ca/drawings/unixpermissions.png', 'page_url': 'https://drawings.jvns.ca/permissions/'},
+    'bashtips': {'img_url': 'https://drawings.jvns.ca/drawings/bashtips.png',  'page_url': 'https://drawings.jvns.ca/bashtips/'},
+    }
+
+
+CONFIG_DIR_PATH = os.path.realpath(os.path.expanduser("~/.0rk/"))
+CACHE_SUBDIR_NAME = "cache"
+CACHE_DIR_PATH = os.path.join(CONFIG_DIR_PATH, CACHE_SUBDIR_NAME)
+
+
+def get_cached_file_path(the_subject):
+    """
+    """
+    if not os.path.exists(CONFIG_DIR_PATH):
+        print("Creating configuration/cache directory: %s" % CONFIG_DIR_PATH)
+        os.mkdir(CONFIG_DIR_PATH)
+
+    if not os.path.exists(CACHE_DIR_PATH):
+        os.mkdir(CACHE_DIR_PATH)
+
+    the_url = SUBJECTS[the_subject]['img_url']
+    cached_img_file_name = "%s.png" % hashlib.sha1(the_url.encode()).hexdigest()
+
+    cached_img_file_path = os.path.join(CACHE_DIR_PATH, cached_img_file_name)
+
+    if not os.path.exists(cached_img_file_path):
+        open(cached_img_file_path, "wb").write(urllib.request.urlopen(urllib.request.Request(the_url, headers = {'User-Agent': "Python-urllib/2.x (0rk/0.1.2)"})).read())
+
+    return cached_img_file_path
+
+
+def show_image_in_iterm(the_image_file_path):
+    """
+    """
+    # TODO: Use library/more robust implementation?
+    #
+    # This implementation based on protocol documented here:
+    #  * <https://www.iterm2.com/documentation-images.html>
+    #  * <https://www.iterm2.com/documentation-escape-codes.html>
+    #
+    # A more robust implementation can be found here:
+    #  * <https://gist.github.com/garfieldnate/d48f3efd47234dd8ee28d2e674cf8bbe>
+    #
+    # A library can be found here:
+    #  * <https://github.com/asmeurer/iterm2-tools>
+    #
+    import base64
+    print("\x1b]1337;File=inline=1:%s\x07" % base64.b64encode(open(the_image_file_path, 'rb').read()))
+
+
+if __name__ == "__main__":
+
+    if len(sys.argv) == 1:
+        print()
+        print("You can learn about these subjects: %s" % ", ".join(list(SUBJECTS.keys())))
+        print("For example, to learn about the `man` command you can type: ./0rk man")
+        print()
+        print("Follow & support @b0rk's work here: https://twitter.com/b0rk & http://jvns.ca/")
+        print()
+        raise SystemExit
+
+    requested_subject = sys.argv[1]
+    image_file_path = get_cached_file_path(requested_subject)
+
+    if requested_subject in SUBJECTS:
+        if os.environ.get("KITTY_PID"):
+            subprocess.call(["kitty", "+kitten", "icat", image_file_path])
+        elif sys.platform == "darwin":
+            if os.environ.get("TERM_PROGRAM") == "iTerm.app": # TODO: Additional checks? e.g. version
+                print()
+                show_image_in_iterm(image_file_path)
+                print()
+            else:
+                subprocess.call(["qlmanage", "-p", image_file_path], stdout=open(os.devnull, 'wb'))
+        else:
+            import webbrowser
+            webbrowser.open(SUBJECTS[requested_subject]['page_url'], new=1)
+    else:
+        print()
+        print("Sorry, that subject is not available.")
+        print("You could try `man %s`." % requested_subject)
+        print()
