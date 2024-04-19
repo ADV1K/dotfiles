@@ -5,7 +5,7 @@ set VISUAL      nvim
 set PAGER       bat
 
 # Aliases
-alias ls        "eza --icons" 
+alias ls        "eza --icons --long --header --all --group-directories-first"
 alias ll        "eza --icons --long --header" 
 alias la        "eza --icons --long --header --all" 
 alias tree      "eza --icons --tree --level 2" 
@@ -33,6 +33,7 @@ abbr ef		    "$EDITOR ~/.config/fish/config.fish"
 abbr ek		    "$EDITOR ~/.config/kitty/kitty.conf"
 abbr et		    "$EDITOR ~/.config/tmux/tmux.conf"
 abbr ey         "$EDITOR ~/.config/yabai/yabairc"
+abbr es         "$EDITOR ~/.config/skhd/skhdrc"
 abbr eh         "$EDITOR ~/.config/hypr/hyprland.conf"
 abbr ev         "$EDITOR ~/.config/nvim/lua/custom/init.lua"
 abbr tb         "nc termbin.com 9999"
