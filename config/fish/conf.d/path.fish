@@ -9,3 +9,4 @@ fish_add_path ~/.cargo/bin
 fish_add_path ~/.yarn/bin
 fish_add_path ~/.asdf/bin
 fish_add_path ~/.local/bin
+fish_add_path ~/go/bin

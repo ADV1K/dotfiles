@@ -1,11 +1,11 @@
 # Variables
-set EDITOR      nvim
-set VISUAL      nvim
-# set BROWSER     google-chrome-stable
-set PAGER       bat
+set -gx EDITOR      nvim
+set -gx VISUAL      nvim
+# set -gx BROWSER     google-chrome-stable
+set -gx PAGER       bat
 
 # Aliases
-alias ls        "eza --icons --long --header --all --group-directories-first"
+alias ls        "eza --icons --long --header --group-directories-first"
 alias ll        "eza --icons --long --header" 
 alias la        "eza --icons --long --header --all" 
 alias tree      "eza --icons --tree --level 2" 

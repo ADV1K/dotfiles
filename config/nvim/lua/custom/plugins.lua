@@ -152,6 +152,22 @@ local plugins = {
     end,
     opts = overrides.nvterm,
   },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    requires = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup {
+        update_focused_file = {
+          enable = true,
+        },
+      }
+    end,
+  },
+  { "ray-x/go.nvim" }
 }
 
 return plugins
