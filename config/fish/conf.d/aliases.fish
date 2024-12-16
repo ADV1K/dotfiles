@@ -2,6 +2,7 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 set -gx EDITOR      nvim
 set -gx VISUAL      nvim
 # set -gx BROWSER     google-chrome-stable
@@ -23,6 +24,13 @@ set VISUAL      nvim
 set -x EDITOR   nvim
 set -x VISUAL   nvim
 >>>>>>> Stashed changes
+||||||| Stash base
+set EDITOR      nvim
+set VISUAL      nvim
+=======
+set -x EDITOR   nvim
+set -x VISUAL   nvim
+>>>>>>> Stashed changes
 set BROWSER     google-chrome-stable
 set PAGER       bat
 =======
@@ -38,11 +46,19 @@ alias sudo "sudo -E"
 
 alias sudo "sudo -E"
 
+alias sudo "sudo -E"
+
 # Aliases
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 alias ls        "eza --icons --long --header --group-directories-first"
+||||||| Stash base
+alias ls        "eza --icons" 
+=======
+alias ls        "eza --icons --long --header --all --group-directories-first"
+>>>>>>> Stashed changes
 ||||||| Stash base
 alias ls        "eza --icons" 
 =======
