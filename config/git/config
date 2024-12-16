@@ -33,3 +33,5 @@
 	helper = !gh auth git-credential
 [help]
 	autocorrect = immediate
+[http]
+	postBuffer = 157286400

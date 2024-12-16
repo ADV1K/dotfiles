@@ -1,11 +1,31 @@
 # Variables
+<<<<<<< Updated upstream
 set -gx EDITOR      nvim
 set -gx VISUAL      nvim
 # set -gx BROWSER     google-chrome-stable
 set -gx PAGER       bat
+||||||| Stash base
+set EDITOR      nvim
+set VISUAL      nvim
+set BROWSER     google-chrome-stable
+set PAGER       bat
+=======
+set -x EDITOR   nvim
+set -x VISUAL   nvim
+set BROWSER     google-chrome-stable
+set PAGER       bat
+>>>>>>> Stashed changes
+
+alias sudo "sudo -E"
 
 # Aliases
+<<<<<<< Updated upstream
 alias ls        "eza --icons --long --header --group-directories-first"
+||||||| Stash base
+alias ls        "eza --icons" 
+=======
+alias ls        "eza --icons --long --header --all --group-directories-first"
+>>>>>>> Stashed changes
 alias ll        "eza --icons --long --header" 
 alias la        "eza --icons --long --header --all" 
 alias tree      "eza --icons --tree --level 2" 
