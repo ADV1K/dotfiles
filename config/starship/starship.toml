@@ -4,6 +4,7 @@
 ## CROSS-SHELL PROMPT
 ## The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 
+command_timeout = 200
 format = """
 $hostname\
 $directory\

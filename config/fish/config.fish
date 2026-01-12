@@ -1,13 +1,18 @@
 source ~/.config/fish/conf.d/aliases.fish
 source ~/.config/fish/conf.d/path.fish
 
+# disable fish history, we will use atuin
+set -g fish_history /dev/null
+
 # Init shell apps
 atuin init fish | source
-direnv hook fish | source
+#direnv hook fish | source
 starship init fish | source
 zoxide init fish --cmd j | source
 
 function fish_greeting
+	fortune -s
+	fish_logo
 end
 
 
