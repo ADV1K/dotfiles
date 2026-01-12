@@ -2,7 +2,7 @@ source ~/.config/fish/conf.d/aliases.fish
 source ~/.config/fish/conf.d/path.fish
 
 # disable fish history, we will use atuin
-set -g fish_history /dev/null
+set -g fish_history ""
 
 # Init shell apps
 atuin init fish | source
