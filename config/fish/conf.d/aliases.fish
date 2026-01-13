@@ -13,16 +13,16 @@ alias la        "eza --icons --long --header --all"
 alias tree      "eza --icons --tree --level 2" 
 
 alias rm        trash
-alias rg        batgrep
+alias rg        'batgrep --terminal-width $COLUMNS'
 alias vim       $EDITOR
 alias cat       bat
-alias man       "BAT_THEME='default' batman"
+alias man       batman
 alias curl      curlie
-alias grep      batgrep
 alias diff      delta
-alias grip      "grip --browser"
-alias ncdu      "ncdu --color dark -x"
+alias grip      'grip --browser'
+alias ncdu      'ncdu --color dark -x'
 alias take      'mkdir -p $argv[1]; cd $argv[1];'
+alias grep      'batgrep --terminal-width $COLUMNS'
 
 # kittens
 alias icat      "kitten icat"
