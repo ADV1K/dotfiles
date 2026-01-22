@@ -4,13 +4,15 @@ set -gx VISUAL      nvim
 set -gx BROWSER     google-chrome-stable
 set -gx PAGER       bat
 
-alias sudo "sudo -E"
+# Keybinds
+#bind \cp _atuin_bind_up
 
 # Aliases
 alias ls        "eza --icons --long --header --all --group-directories-first"
 alias ll        "eza --icons --long --header" 
 alias la        "eza --icons --long --header --all" 
 alias tree      "eza --icons --tree --level 2" 
+alias sudo "sudo -E"
 
 alias rm        trash
 alias rg        'batgrep --terminal-width $COLUMNS'

@@ -1,4 +1,4 @@
-command = tmux attach || tmux new
+command = tmux new -As main
 keybind = alt+backspace=text:\x17
 theme = Catppuccin Mocha
 
@@ -30,6 +30,7 @@ theme = Catppuccin Mocha
 # # The config file consists of simple key-value pairs,
 # # separated by equals signs.
 font-family = JetBrainsMono Nerd Font
+#font-size = 14
 # window-padding-x = 2
 #
 # # Spacing around the equals sign does not matter.
