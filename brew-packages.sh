@@ -15,6 +15,7 @@ brew install \
     trash \
     lf \
     ncdu \
-    git-delta
+    git-delta \
+    tlrc
 
 #tldeer

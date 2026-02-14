@@ -7,6 +7,22 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "ssh_connections": [
+    {
+      "host": "capybara",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/advik/work/linux-playground"
+          ]
+        }
+      ]
+    }
+  ],
+  "session": {
+    "trust_all_worktrees": true,
+  },
   "icon_theme": "Catppuccin Mocha",
   "vim_mode": true,
   "ui_font_size": 16,
@@ -15,7 +31,7 @@
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
-    "dark": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha (Blur) [Heavy]",
   },
   "terminal": {
     "default_height": 9999,
@@ -24,13 +40,16 @@
     "line_height": "standard",
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 15,
+    "option_as_meta": true,
     "shell": {
       "with_arguments": {
-        "program": "/usr/bin/tmux",
-        "args": ["new", "-As", "main"],
+        "title_override": "",
+        "program": "/usr/bin/env",
+        "args": ["tmux", "new", "-As", "main"],
       },
     },
   },
+
   "lsp": {
     "terraform-ls": {
       "initialization_options": {

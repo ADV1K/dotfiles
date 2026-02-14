@@ -9,7 +9,7 @@
   {
     "context": "Workspace",
     "bindings": {
-      "shift shift": "file_finder::Toggle",
+      // "shift shift": "file_finder::Toggle",
       "alt-i": "terminal_panel::Toggle",
       "ctrl-w *": null,
     },
@@ -24,8 +24,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "shift-h": "pane::ActivatePreviousItem",
-      "shift-l": "pane::ActivateNextItem",
+      "shift-j": "pane::ActivatePreviousItem",
+      "shift-k": "pane::ActivateNextItem",
       "ctrl-w": "pane::CloseActiveItem",
     },
   },
@@ -34,6 +34,7 @@
     "bindings": {
       "ctrl-p": null,
       "ctrl-n": null,
+      "ctrl-enter": null,
     },
   },
   {

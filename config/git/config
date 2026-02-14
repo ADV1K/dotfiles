@@ -2,7 +2,7 @@
 	defaultBranch = main
 
 [user]
-	email = adviksingh6632@gmail.com
+	email = advik.singh@one2n.in
 	name = Advik
 
 [core]
@@ -19,7 +19,7 @@
     line-numbers = true
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [diff]
     colorMoved = default
@@ -35,3 +35,5 @@
 	autocorrect = immediate
 [http]
 	postBuffer = 157286400
+[push]
+	autoSetupRemote = true

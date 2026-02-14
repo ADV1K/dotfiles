@@ -3,9 +3,7 @@ set -gx EDITOR      nvim
 set -gx VISUAL      nvim
 set -gx BROWSER     google-chrome-stable
 set -gx PAGER       bat
-
-# Keybinds
-#bind \cp _atuin_bind_up
+set -gx HOMEBREW_NO_AUTO_UPDATE 1
 
 # Aliases
 alias ls        "eza --icons --long --header --all --group-directories-first"
@@ -23,8 +21,8 @@ alias curl      curlie
 alias diff      delta
 alias grip      'grip --browser'
 alias ncdu      'ncdu --color dark -x'
-alias take      'mkdir -p $argv[1]; cd $argv[1];'
 alias grep      'batgrep --terminal-width $COLUMNS'
+alias python	python3
 
 # kittens
 alias icat      "kitten icat"
@@ -41,6 +39,11 @@ abbr es		"$EDITOR ~/.config/skhd/skhdrc"
 abbr eh		"$EDITOR ~/.config/hypr/hyprland.conf"
 abbr ev		"$EDITOR ~/.config/nvim/lua/custom/init.lua"
 abbr tb		"nc termbin.com 9999"
+abbr tfi	"terraform init -upgrade"
+abbr tfv	"terraform validate"
+abbr tfp	"terraform plan"
+abbr tfa	"terraform apply"
+abbr tfd	"terraform destroy"
 abbr get	"sudo pacman -S --needed"
 abbr remove	"sudo pacman -Rcns"
 
@@ -56,3 +59,9 @@ abbr gcb          "git checkout -b"
 abbr gcl          "git clone"
 abbr gpl          "git pull"
 abbr gps          "git push"
+
+# Functions
+function take
+    mkdir -p $argv[1]
+    cd $argv[1]
+end
