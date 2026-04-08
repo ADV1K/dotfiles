@@ -7,10 +7,25 @@
 // from the command palette.
 [
   {
+    "bindings": {
+      "cmd-alt-g": [
+        "agent::NewExternalAgentThread",
+        { "agent": { "custom": { "name": "gemini" } } },
+      ],
+    },
+  },
+  {
+    "bindings": {
+      "alt-i": "terminal_panel::Toggle",
+      "alt-a": "agent::ToggleFocus",
+      "alt-g": "git_panel::ToggleFocus",
+      "alt-e": "project_panel::ToggleFocus",
+      "ctrl-w *": null,
+    },
+  },
+  {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle",
-      "alt-i": "terminal_panel::Toggle",
       "ctrl-w *": null,
     },
   },
@@ -34,6 +49,7 @@
     "bindings": {
       "ctrl-p": null,
       "ctrl-n": null,
+      "alt-e": null,
       "ctrl-enter": null,
     },
   },

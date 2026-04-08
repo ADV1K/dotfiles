@@ -1,12 +1,13 @@
 [init]
 	defaultBranch = main
+	templateDir = /Users/advik/.git-template
 
 [user]
 	email = advik.singh@one2n.in
 	name = Advik
 
 [core]
-    pager = delta
+    pager = PAGER=less delta
 
 [interactive]
     diffFilter = delta --color-only

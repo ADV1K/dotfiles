@@ -7,45 +7,81 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "ssh_connections": [
-    {
-      "host": "capybara",
-      "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/home/advik/work/linux-playground"
-          ]
-        }
-      ]
-    }
-  ],
-  "session": {
-    "trust_all_worktrees": true,
+  "show_wrap_guides": true,
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false,
+    },
   },
   "icon_theme": "Catppuccin Mocha",
+  "format_on_save": "on",
+  // "preferred_line_length": 120,
+  // "soft_wrap": "editor_width",
   "vim_mode": true,
+  "colorize_brackets": true,
   "ui_font_size": 16,
   "buffer_font_size": 15,
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  "bottom_dock_layout": "full",
   "theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha (Blur) [Heavy]",
   },
+  "use_system_window_tabs": true,
+
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+  },
+
+  "agent_servers": {
+    // "gemini": {
+    //   "command": "gemini",
+    //   "args": ["serve", "--model", "gemini-3.1-pro"],
+    //   // "args": ["--acp"],
+    //   // "ignore_system_version": true,
+    // },
+  },
+
+  "agent": {
+    "default_width": 500,
+    "default_height": 500,
+    "dock": "right",
+  },
+
+  "project_panel": {
+    "default_width": 300,
+    "dock": "right",
+  },
+
+  "git_panel": {
+    "default_width": 300,
+    "dock": "right",
+  },
+
+  "outline_panel": {
+    "dock": "right",
+  },
+
+  "collaboration_panel": {
+    "dock": "right",
+  },
+
   "terminal": {
-    "default_height": 9999,
-    "default_width": 9999,
-    "copy_on_select": true,
-    "line_height": "standard",
-    "font_family": "JetBrainsMono Nerd Font",
+    "dock": "left",
+    "default_width": 1920,
+    "default_height": 1200,
     "font_size": 15,
+    "font_family": "JetBrainsMono Nerd Font",
+    "line_height": "standard",
+    "copy_on_select": true,
     "option_as_meta": true,
+    "alternate_scroll": "on",
     "shell": {
       "with_arguments": {
         "title_override": "",
-        "program": "/usr/bin/env",
-        "args": ["tmux", "new", "-As", "main"],
+        "program": "/bin/bash",
+        "args": ["-lc", "tmux new -As \"$(basename \"$PWD\")\""],
       },
     },
   },
@@ -58,5 +94,20 @@
         },
       },
     },
+  },
+
+  "ssh_connections": [
+    {
+      "host": "capybara",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["~/work/linux-playground"],
+        },
+      ],
+    },
+  ],
+  "session": {
+    "trust_all_worktrees": true,
   },
 }

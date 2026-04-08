@@ -50,7 +50,7 @@ vim.o.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
--- Sync clipboard between OS and Neovim.
+-- Sync clipboard between OS and Neovim, using osc52
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
@@ -60,10 +60,18 @@ vim.schedule(function()
   vim.api.nvim_create_autocmd('TextYankPost', {
     callback = function()
       vim.highlight.on_yank()
-      local copy_to_unnamedplus = require('vim.ui.clipboard.osc52').copy '+'
-      copy_to_unnamedplus(vim.v.event.regcontents)
-      local copy_to_unnamed = require('vim.ui.clipboard.osc52').copy '*'
-      copy_to_unnamed(vim.v.event.regcontents)
+
+      local osc52 = require 'vim.ui.clipboard.osc52'
+      local event = vim.v.event
+
+      -- Copy original lines
+      local lines = event.regcontents
+
+      -- Preserve trailing newline for linewise yanks
+      if event.regtype == 'V' then lines[#lines] = lines[#lines] .. '\n' end
+
+      osc52.copy '+'(lines)
+      osc52.copy '*'(lines)
     end,
   })
 end)
