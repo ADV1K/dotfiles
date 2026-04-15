@@ -11,3 +11,5 @@ fish_add_path ~/.local/bin
 fish_add_path ~/.antigravity/antigravity/bin
 fish_add_path ~/.rustup/toolchains/stable-x86_64-apple-darwin/bin/
 fish_add_path ~/.local/share/nvim/site/
+fish_add_path ~/.local/share/mise/shims
+fish_add_path ~/.local/share/uv/python/

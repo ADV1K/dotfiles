@@ -77,11 +77,15 @@
     "copy_on_select": true,
     "option_as_meta": true,
     "alternate_scroll": "on",
+    "working_directory": "current_project_directory",
     "shell": {
       "with_arguments": {
         "title_override": "",
         "program": "/bin/bash",
-        "args": ["-lc", "tmux new -As \"$(basename \"$PWD\")\""],
+        "args": [
+          "-lc",
+          "tmux has-session -t \"$(basename \"$PWD\" | tr . _)\" 2>/dev/null && tmux new-window -t \"$(basename \"$PWD\" | tr . _)\" -c \"$PWD\" \\; attach-session -t \"$(basename \"$PWD\" | tr . _)\" || tmux new-session -s \"$(basename \"$PWD\" | tr . _)\" -c \"$PWD\"",
+        ],
       },
     },
   },
@@ -102,10 +106,22 @@
       "args": [],
       "projects": [
         {
-          "paths": ["~/work/linux-playground"],
+          "paths": [
+            "~/homelab"
+          ]
         },
-      ],
+        {
+          "paths": [
+            "~/work/linux-playground"
+          ]
+        }
+      ]
     },
+    {
+      "host": "capybara-lan",
+      "args": [],
+      "projects": []
+    }
   ],
   "session": {
     "trust_all_worktrees": true,

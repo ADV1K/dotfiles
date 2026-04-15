@@ -5,10 +5,12 @@ set -g fish_history ""
 set fish_cursor_default block
 
 # Init shell apps
-mise activate | source
-starship init fish | source
-zoxide init fish --cmd j | source
-source ~/.config/fish/atuin.fish
+#if status is-interactive
+    #mise activate fish --shims | source
+    starship init fish | source
+    zoxide init fish --cmd j | source
+    source ~/.config/fish/atuin.fish
+#end
 #direnv hook fish | source
 
 function fish_greeting
@@ -25,4 +27,4 @@ bind \cr _atuin_search
 
 # Added by OrbStack: command-line tools and integration
 # This won't be added again if you remove it.
-source ~/.orbstack/shell/init2.fish 2>/dev/null || :
+#source ~/.orbstack/shell/init2.fish 2>/dev/null || :

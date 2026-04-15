@@ -1,0 +1,6 @@
+_bmad/
+_bmad-output/
+.gemini/
+.claude/
+.opencode/
+.vscode/
