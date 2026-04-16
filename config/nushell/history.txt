@@ -1,6 +1,0 @@
-vim config/nushell/config.nu
-nu
-vim config/nushell/config.nu
-nu
-nu
-nu

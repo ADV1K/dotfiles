@@ -13,7 +13,11 @@
       "show_edit_predictions": false,
     },
   },
-  "icon_theme": "Catppuccin Mocha",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Catppuccin Mocha",
+    "dark": "Catppuccin Mocha",
+  },
   "format_on_save": "on",
   // "preferred_line_length": 120,
   // "soft_wrap": "editor_width",
@@ -24,7 +28,7 @@
   "buffer_font_family": "JetBrainsMono Nerd Font",
   "bottom_dock_layout": "full",
   "theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha (Blur) [Heavy]",
   },
@@ -69,8 +73,8 @@
 
   "terminal": {
     "dock": "left",
-    "default_width": 1920,
-    "default_height": 1200,
+    // "default_width": 4000,
+    // "default_height": 1200,
     "font_size": 15,
     "font_family": "JetBrainsMono Nerd Font",
     "line_height": "standard",
@@ -104,24 +108,17 @@
     {
       "host": "capybara",
       "args": [],
-      "projects": [
-        {
-          "paths": [
-            "~/homelab"
-          ]
-        },
-        {
-          "paths": [
-            "~/work/linux-playground"
-          ]
-        }
-      ]
+      "projects": [],
     },
     {
       "host": "capybara-lan",
       "args": [],
-      "projects": []
-    }
+      "projects": [
+        {
+          "paths": ["~/fun/linux-playground"],
+        },
+      ],
+    },
   ],
   "session": {
     "trust_all_worktrees": true,
